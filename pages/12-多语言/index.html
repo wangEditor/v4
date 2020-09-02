@@ -1087,9 +1087,159 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x591A;&#x8BED;&#x8A00;">&#x591A;&#x8BED;&#x8A00;</h1>
-<p>&#x5F85;&#x8865;&#x5145;&#x2026;&#x2026;</p>
-<footer class="page-footer"><span class="copyright">Copyright &#xA9; wangEditor (2020 - present) all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">File Modify: 
-2020-08-25 11:12:34
+<blockquote>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5; wangEditor &#x662F;&#x4E0D;&#x63D0;&#x4F9B;&#x591A;&#x8BED;&#x8A00;&#x529F;&#x80FD;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4F1A;&#x589E;&#x5927;&#x6211;&#x4EEC;&#x7684;&#x4F53;&#x79EF;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x53D8;&#x5F97;&#x81C3;&#x80BF;&#x3002;  </p>
+</blockquote>
+<h2 id="&#x52A0;&#x8F7D;-i18next">&#x52A0;&#x8F7D; i18next</h2>
+<p>&#x60F3;&#x8981;&#x4F7F;&#x7528;&#x591A;&#x8BED;&#x8A00;&#x529F;&#x80FD;&#x7684;&#x5C0F;&#x4F19;&#x4F34;&#xFF0C;&#x9996;&#x5148;&#x9700;&#x8981;&#x5B89;&#x88C5; i18next  </p>
+<pre><code>npm i -S i18next
+</code></pre><h2 id="&#x63A5;&#x5165;-i18next">&#x63A5;&#x5165; i18next</h2>
+<p>&#x4EC5;&#x4EC5;&#x662F;&#x5B89;&#x88C5;&#x4E86; i18next &#x8FD8;&#x4E0D;&#x591F;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x628A; i18next &#x63A5;&#x5165;&#x5230; wangEditor &#x5F53;&#x4E2D;</p>
+<pre><code>// js &#x5F15;&#x5165;&#x65B9;&#x5F0F;
+
+const E = window.wangEditor
+const editor = new E(&apos;#div1&apos;)
+
+// &#x5F15;&#x5165; i18next &#x63D2;&#x4EF6;
+editor.i18next = window.i18next 
+
+editor.create()
+</code></pre><h2 id="&#x4F7F;&#x7528;-i18next">&#x4F7F;&#x7528; i18next</h2>
+<p>&#x76EE;&#x524D;&#x6211;&#x4EEC;&#x4EC5;&#x63D0;&#x4F9B;&#x4E24;&#x79CD;&#x7FFB;&#x8BD1;: &apos;zh-CN&apos;(&#x7B80;&#x4F53;&#x4E2D;&#x6587;) &#x548C; &apos;en&apos;(&#x82F1;&#x6587;)<br>&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#x4E5F;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728;&#x521B;&#x5EFA;&#x7F16;&#x8F91;&#x5668;&#x524D;&#xFF0C;&#x8BBE;&#x7F6E; lang &#x5C31;&#x53EF;&#x4EE5;&#x4E86;</p>
+<pre><code>// js &#x5F15;&#x5165;&#x65B9;&#x5F0F;
+
+const E = window.wangEditor
+const editor = new E(&apos;#div1&apos;)
+
+// &#x9009;&#x62E9;&#x8BED;&#x8A00;
+editor.config.lang = &apos;en&apos;
+// &#x5F15;&#x5165; i18next &#x63D2;&#x4EF6;
+editor.i18next = window.i18next 
+
+editor.create()
+</code></pre><h2 id="&#x81EA;&#x5B9A;&#x4E49;&#x8BED;&#x8A00;">&#x81EA;&#x5B9A;&#x4E49;&#x8BED;&#x8A00;</h2>
+<p>&#x5F88;&#x663E;&#x7136;&#x4EC5;&#x4EC5;&#x53EA;&#x662F;&#x4E2D;&#x6587;&#x548C;&#x82F1;&#x6587;&#x662F;&#x4E0D;&#x591F;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x8BED;&#x8A00;&#x7684;&#x65B9;&#x6CD5;</p>
+<pre><code>// js &#x5F15;&#x5165;&#x65B9;&#x5F0F;
+
+const E = window.wangEditor
+const editor = new E(&apos;#div1&apos;)
+
+// &#x9009;&#x62E9;&#x8BED;&#x8A00;
+editor.config.lang = &apos;japan&apos;
+// &#x81EA;&#x5B9A;&#x4E49;&#x8BED;&#x8A00;
+editor.config.languages[&apos;japan&apos;] = {
+    wangEditor: {
+        &#x8BF7;&#x8F93;&#x5165;&#x6B63;&#x6587;: &apos;&#x672C;&#x6587;&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&apos;,
+    }
+}
+// &#x5F15;&#x5165; i18next &#x63D2;&#x4EF6;
+editor.i18next = window.i18next 
+
+
+editor.create()
+</code></pre><h2 id="&#x8BED;&#x8A00;&#x6A21;&#x677F;">&#x8BED;&#x8A00;&#x6A21;&#x677F;</h2>
+<p>&#x60F3;&#x8981;&#x81EA;&#x5B9A;&#x4E49;&#x8BED;&#x8A00;&#xFF0C;&#x9700;&#x8981;&#x6839;&#x636E;&#x8BED;&#x8A00;&#x6A21;&#x677F;&#x6765;&#xFF0C;&#x8FDB;&#x884C;&#x7FFB;&#x8BD1;&#x624D;&#x884C;</p>
+<pre><code>{
+    wangEditor: {
+        &#x63D2;&#x5165;: &apos;insert&apos;,
+        &#x9ED8;&#x8BA4;: &apos;default&apos;,
+        &#x521B;&#x5EFA;: &apos;create&apos;,
+        &#x4FEE;&#x6539;: &apos;edit&apos;,
+        &#x5982;: &apos;like&apos;,
+        &#x8BF7;&#x8F93;&#x5165;&#x6B63;&#x6587;: &apos;please enter the text&apos;,
+        menus: {
+            dropListMenu: {
+                &#x8BBE;&#x7F6E;&#x6807;&#x9898;: &apos;title&apos;,
+                &#x80CC;&#x666F;&#x989C;&#x8272;: &apos;background&apos;,
+                &#x6587;&#x5B57;&#x989C;&#x8272;: &apos;font color&apos;,
+                &#x8BBE;&#x7F6E;&#x5B57;&#x53F7;: &apos;font size&apos;,
+                &#x8BBE;&#x7F6E;&#x5B57;&#x4F53;: &apos;font family&apos;,
+                &#x8BBE;&#x7F6E;&#x7F29;&#x8FDB;: &apos;indent&apos;,
+                &#x5BF9;&#x9F50;&#x65B9;&#x5F0F;: &apos;align&apos;,
+                &#x8BBE;&#x7F6E;&#x884C;&#x9AD8;: &apos;line heihgt&apos;,
+                &#x5E8F;&#x5217;: &apos;list&apos;,
+                head: {
+                    &#x6B63;&#x6587;: &apos;text&apos;,
+                },
+                indent: {
+                    &#x589E;&#x52A0;&#x7F29;&#x8FDB;: &apos;indent&apos;,
+                    &#x51CF;&#x5C11;&#x7F29;&#x8FDB;: &apos;outdent&apos;,
+                },
+                justify: {
+                    &#x9760;&#x5DE6;: &apos;left&apos;,
+                    &#x5C45;&#x4E2D;: &apos;center&apos;,
+                    &#x9760;&#x53F3;: &apos;right&apos;,
+                },
+                list: {
+                    &#x65E0;&#x5E8F;&#x5217;&#x8868;: &apos;unordered&apos;,
+                    &#x6709;&#x5E8F;&#x5217;&#x8868;: &apos;ordered&apos;,
+                },
+            },
+            panelMenus: {
+                emoticon: {
+                    &#x9ED8;&#x8BA4;: &apos;default&apos;,
+                    &#x65B0;&#x6D6A;: &apos;sina&apos;,
+                    emoji: &apos;emoji&apos;,
+                    &#x624B;&#x52BF;: &apos;gesture&apos;,
+                },
+                image: {
+                    &#x56FE;&#x7247;&#x94FE;&#x63A5;: &apos;image link&apos;,
+                    &#x4E0A;&#x4F20;&#x56FE;&#x7247;: &apos;upload image&apos;,
+                    &#x7F51;&#x7EDC;&#x56FE;&#x7247;: &apos;network image&apos;,
+                },
+                link: {
+                    &#x94FE;&#x63A5;: &apos;link&apos;,
+                    &#x94FE;&#x63A5;&#x6587;&#x5B57;: &apos;link text&apos;,
+                    &#x5220;&#x9664;&#x94FE;&#x63A5;: &apos;delete&apos;,
+                    &#x67E5;&#x770B;&#x94FE;&#x63A5;: &apos;view&apos;,
+                },
+                video: {
+                    &#x63D2;&#x5165;&#x89C6;&#x9891;: &apos;insert video&apos;,
+                },
+                table: {
+                    &#x884C;: &apos;row&apos;,
+                    &#x5217;: &apos;column&apos;,
+                    &#x7684;: &apos; &apos;,
+                    &#x8868;&#x683C;: &apos;table&apos;,
+                    &#x6DFB;&#x52A0;&#x884C;: &apos;add row&apos;,
+                    &#x5220;&#x9664;&#x884C;: &apos;delete row&apos;,
+                    &#x6DFB;&#x52A0;&#x5217;: &apos;add column&apos;,
+                    &#x5220;&#x9664;&#x5217;: &apos;delete column&apos;,
+                    &#x8BBE;&#x7F6E;&#x8868;&#x5934;: &apos;set header&apos;,
+                    &#x53D6;&#x6D88;&#x8868;&#x5934;: &apos;cancel header&apos;,
+                    &#x63D2;&#x5165;&#x8868;&#x683C;: &apos;insert table&apos;,
+                    &#x5220;&#x9664;&#x8868;&#x683C;: &apos;delete table&apos;,
+                },
+                code: {
+                    &#x5220;&#x9664;&#x4EE3;&#x7801;: &apos;delete code&apos;,
+                    &#x4FEE;&#x6539;&#x4EE3;&#x7801;: &apos;edit code&apos;,
+                    &#x63D2;&#x5165;&#x4EE3;&#x7801;: &apos;insert code&apos;,
+                },
+            },
+        },
+        validate: {
+            &#x5F20;&#x56FE;&#x7247;: &apos;images&apos;,
+            &#x5927;&#x4E8E;: &apos;greater than&apos;,
+            &#x56FE;&#x7247;&#x94FE;&#x63A5;: &apos;image link&apos;,
+            &#x4E0D;&#x662F;&#x56FE;&#x7247;: &apos;is not image&apos;,
+            &#x8FD4;&#x56DE;&#x7ED3;&#x679C;: &apos;return results&apos;,
+            &#x4E0A;&#x4F20;&#x56FE;&#x7247;&#x8D85;&#x65F6;: &apos;upload image timeout&apos;,
+            &#x4E0A;&#x4F20;&#x56FE;&#x7247;&#x9519;&#x8BEF;: &apos;upload image error&apos;,
+            &#x4E0A;&#x4F20;&#x56FE;&#x7247;&#x5931;&#x8D25;: &apos;upload image failed&apos;,
+            &#x63D2;&#x5165;&#x56FE;&#x7247;&#x9519;&#x8BEF;: &apos;insert image error&apos;,
+            &#x4E00;&#x6B21;&#x6700;&#x591A;&#x4E0A;&#x4F20;: &apos;once most at upload&apos;,
+            &#x4E0B;&#x8F7D;&#x94FE;&#x63A5;&#x5931;&#x8D25;: &apos;download link failed&apos;,
+            &#x56FE;&#x7247;&#x9A8C;&#x8BC1;&#x672A;&#x901A;&#x8FC7;: &apos;image validate failed&apos;,
+            &#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x72B6;&#x6001;: &apos;server return status&apos;,
+            &#x4E0A;&#x4F20;&#x56FE;&#x7247;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x9519;&#x8BEF;: &apos;upload image return results error&apos;,
+            &#x8BF7;&#x66FF;&#x6362;&#x4E3A;&#x652F;&#x6301;&#x7684;&#x56FE;&#x7247;&#x7C7B;&#x578B;: &apos;please replace with a supported image type&apos;,
+            &#x60A8;&#x63D2;&#x5165;&#x7684;&#x7F51;&#x7EDC;&#x56FE;&#x7247;&#x65E0;&#x6CD5;&#x8BC6;&#x522B;: &apos;the network picture you inserted is not recognized&apos;,
+            &#x60A8;&#x521A;&#x624D;&#x63D2;&#x5165;&#x7684;&#x56FE;&#x7247;&#x94FE;&#x63A5;&#x672A;&#x901A;&#x8FC7;&#x7F16;&#x8F91;&#x5668;&#x6821;&#x9A8C;: &apos;the image link you just inserted did not pass the editor verification&apos;,
+        },
+    }
+}
+</code></pre><footer class="page-footer"><span class="copyright">Copyright &#xA9; wangEditor (2020 - present) all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">File Modify: 
+2020-09-02 11:18:16
 </span></footer>
                                 
                                 </section>
@@ -1129,7 +1279,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"12-多语言","level":"2.12","depth":1,"previous":{"title":"更多可参考的源码","level":"2.11.7","depth":2,"path":"pages/11-自定义扩展菜单/07-更多可参考的源码.md","ref":"pages/11-自定义扩展菜单/07-更多可参考的源码.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","donate","hide-element","summary"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy wangEditor (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/wangeditor-team/wangeditor"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"donate":{"title":"","button":"捐赠","wechat":"https://what-is-fe.gitee.io/images/wechat-pay.jpeg","alipay":"https://what-is-fe.gitee.io/images/ali-pay.jpeg","wechatText":"","alipayText":""},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"wangfupeng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"wangEditor 用户文档","language":"zh-hans","gitbook":"*","description":"wangEditor 用户文档"},"file":{"path":"pages/12-多语言/README.md","mtime":"2020-08-25T03:12:34.580Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-26T02:14:39.094Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"12-多语言","level":"2.12","depth":1,"previous":{"title":"更多可参考的源码","level":"2.11.7","depth":2,"path":"pages/11-自定义扩展菜单/07-更多可参考的源码.md","ref":"pages/11-自定义扩展菜单/07-更多可参考的源码.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","donate","hide-element","summary"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy wangEditor (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/wangeditor-team/wangeditor"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"donate":{"title":"","button":"捐赠","wechat":"https://what-is-fe.gitee.io/images/wechat-pay.jpeg","alipay":"https://what-is-fe.gitee.io/images/ali-pay.jpeg","wechatText":"","alipayText":""},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"wangfupeng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"wangEditor 用户文档","language":"zh-hans","gitbook":"*","description":"wangEditor 用户文档"},"file":{"path":"pages/12-多语言/README.md","mtime":"2020-09-02T03:18:16.639Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-02T03:18:45.527Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
