@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>placeholder · wangEditor 用户文档</title>
+        <title>自动 focus · wangEditor 用户文档</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -77,10 +77,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="08-自动focus.html" />
+    <link rel="next" href="99-使用V3版本.html" />
     
     
-    <link rel="prev" href="06-zIndex.html" />
+    <link rel="prev" href="07-placeholder.html" />
     
 
     </head>
@@ -223,7 +223,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.1.7" data-path="07-placeholder.html">
+        <li class="chapter " data-level="2.1.7" data-path="07-placeholder.html">
             
                 <a href="07-placeholder.html">
             
@@ -236,7 +236,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.1.8" data-path="08-自动focus.html">
+        <li class="chapter active" data-level="2.1.8" data-path="08-自动focus.html">
             
                 <a href="08-自动focus.html">
             
@@ -1086,7 +1086,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >placeholder</a>
+        <a href="../.." >自动 focus</a>
     </h1>
 </div>
 
@@ -1101,12 +1101,12 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="placeholder">placeholder</h1>
-<p>&#x53EF;&#x4EE5;&#x4FEE;&#x6539; placeholder &#x7684;&#x63D0;&#x793A;&#x6587;&#x5B57;&#x3002;</p>
+                                <h1 id="&#x81EA;&#x52A8;-focus">&#x81EA;&#x52A8; focus</h1>
+<p>&#x7F16;&#x8F91;&#x5668;&#x521D;&#x59CB;&#x5316;&#x65F6;&#xFF0C;&#x9ED8;&#x8BA4;&#x4F1A;&#x81EA;&#x52A8; focus &#x5230;&#x7F16;&#x8F91;&#x533A;&#x57DF;&#x3002;&#x53EF;&#x901A;&#x8FC7;&#x5982;&#x4E0B;&#x64CD;&#x4F5C;&#xFF0C;&#x53D6;&#x6D88;&#x81EA;&#x52A8; focus &#x3002;</p>
 <pre><code class="lang-js"><span class="hljs-keyword">const</span> editor = <span class="hljs-keyword">new</span> E(<span class="hljs-string">&apos;#div1&apos;</span>)
 
-editor.config.placeholder = <span class="hljs-string">&apos;&#x81EA;&#x5B9A;&#x4E49; placeholder &#x63D0;&#x793A;&#x6587;&#x5B57;&apos;</span>
-<span class="hljs-comment">// editor.config.placeholder = &apos;&apos; // &#x4E0D;&#x60F3;&#x4F7F;&#x7528; placeholder &#xFF0C;&#x8D4B;&#x503C;&#x4E3A;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x5373;&#x53EF;</span>
+<span class="hljs-comment">// &#x53D6;&#x6D88;&#x81EA;&#x52A8; focus</span>
+editor.config.focus = <span class="hljs-literal">false</span>
 
 editor.create()
 </code></pre>
@@ -1139,12 +1139,12 @@ editor.create()
 
             
                 
-                <a href="06-zIndex.html" class="navigation navigation-prev " aria-label="Previous page: 配置 z-index">
+                <a href="07-placeholder.html" class="navigation navigation-prev " aria-label="Previous page: placeholder">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="08-自动focus.html" class="navigation navigation-next " aria-label="Next page: 自动 focus">
+                <a href="99-使用V3版本.html" class="navigation navigation-next " aria-label="Next page: 使用V3版本">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1155,7 +1155,7 @@ editor.create()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"placeholder","level":"2.1.7","depth":2,"next":{"title":"自动 focus","level":"2.1.8","depth":2,"path":"pages/01-开始使用/08-自动focus.md","ref":"pages/01-开始使用/08-自动focus.md","articles":[]},"previous":{"title":"配置 z-index","level":"2.1.6","depth":2,"path":"pages/01-开始使用/06-zIndex.md","ref":"pages/01-开始使用/06-zIndex.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","donate","hide-element","summary"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy wangEditor (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/wangeditor-team/wangeditor"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"donate":{"title":"","button":"捐赠","wechat":"https://what-is-fe.gitee.io/images/wechat-pay.jpeg","alipay":"https://what-is-fe.gitee.io/images/ali-pay.jpeg","wechatText":"","alipayText":""},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"wangfupeng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"wangEditor 用户文档","language":"zh-hans","gitbook":"*","description":"wangEditor 用户文档"},"file":{"path":"pages/01-开始使用/07-placeholder.md","mtime":"2020-09-17T02:15:23.147Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-17T02:16:04.519Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"自动 focus","level":"2.1.8","depth":2,"next":{"title":"使用V3版本","level":"2.1.9","depth":2,"path":"pages/01-开始使用/99-使用V3版本.md","ref":"pages/01-开始使用/99-使用V3版本.md","articles":[]},"previous":{"title":"placeholder","level":"2.1.7","depth":2,"path":"pages/01-开始使用/07-placeholder.md","ref":"pages/01-开始使用/07-placeholder.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","donate","hide-element","summary"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy wangEditor (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/wangeditor-team/wangeditor"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"donate":{"title":"","button":"捐赠","wechat":"https://what-is-fe.gitee.io/images/wechat-pay.jpeg","alipay":"https://what-is-fe.gitee.io/images/ali-pay.jpeg","wechatText":"","alipayText":""},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"wangfupeng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"wangEditor 用户文档","language":"zh-hans","gitbook":"*","description":"wangEditor 用户文档"},"file":{"path":"pages/01-开始使用/08-自动focus.md","mtime":"2020-09-17T02:15:23.147Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-17T02:16:04.519Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
