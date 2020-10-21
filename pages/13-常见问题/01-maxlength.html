@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>清空内容 · wangEditor 用户文档</title>
+        <title>max-length · wangEditor 用户文档</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -81,10 +81,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../03-配置菜单/" />
+    <link rel="next" href="02-xss攻击.html" />
     
     
-    <link rel="prev" href="05-获取JSON.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -271,9 +271,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="./">
+        <li class="chapter " data-level="2.2" data-path="../02-内容处理/">
             
-                <a href="./">
+                <a href="../02-内容处理/">
             
                     
                     02-内容处理
@@ -285,9 +285,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.2.1" data-path="01-设置内容.html">
+        <li class="chapter " data-level="2.2.1" data-path="../02-内容处理/01-设置内容.html">
             
-                <a href="01-设置内容.html">
+                <a href="../02-内容处理/01-设置内容.html">
             
                     
                     设置内容
@@ -298,9 +298,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.2" data-path="02-追加新内容.html">
+        <li class="chapter " data-level="2.2.2" data-path="../02-内容处理/02-追加新内容.html">
             
-                <a href="02-追加新内容.html">
+                <a href="../02-内容处理/02-追加新内容.html">
             
                     
                     追加新内容
@@ -311,9 +311,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.3" data-path="03-获取html.html">
+        <li class="chapter " data-level="2.2.3" data-path="../02-内容处理/03-获取html.html">
             
-                <a href="03-获取html.html">
+                <a href="../02-内容处理/03-获取html.html">
             
                     
                     获取 html
@@ -324,9 +324,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.4" data-path="04-获取text.html">
+        <li class="chapter " data-level="2.2.4" data-path="../02-内容处理/04-获取text.html">
             
-                <a href="04-获取text.html">
+                <a href="../02-内容处理/04-获取text.html">
             
                     
                     获取 text
@@ -337,9 +337,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.5" data-path="05-获取JSON.html">
+        <li class="chapter " data-level="2.2.5" data-path="../02-内容处理/05-获取JSON.html">
             
-                <a href="05-获取JSON.html">
+                <a href="../02-内容处理/05-获取JSON.html">
             
                     
                     获取 JSON
@@ -350,9 +350,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.2.6" data-path="06-清空内容.html">
+        <li class="chapter " data-level="2.2.6" data-path="../02-内容处理/06-清空内容.html">
             
-                <a href="06-清空内容.html">
+                <a href="../02-内容处理/06-清空内容.html">
             
                     
                     清空内容
@@ -1073,9 +1073,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.13" data-path="../13-常见问题/">
+        <li class="chapter " data-level="2.13" data-path="./">
             
-                <a href="../13-常见问题/">
+                <a href="./">
             
                     
                     13-常见问题
@@ -1087,9 +1087,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.13.1" data-path="../13-常见问题/01-maxlength.html">
+        <li class="chapter active" data-level="2.13.1" data-path="01-maxlength.html">
             
-                <a href="../13-常见问题/01-maxlength.html">
+                <a href="01-maxlength.html">
             
                     
                     max-length
@@ -1100,9 +1100,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.13.2" data-path="../13-常见问题/02-xss攻击.html">
+        <li class="chapter " data-level="2.13.2" data-path="02-xss攻击.html">
             
-                <a href="../13-常见问题/02-xss攻击.html">
+                <a href="02-xss攻击.html">
             
                     
                     XSS 攻击
@@ -1148,7 +1148,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >清空内容</a>
+        <a href="../.." >max-length</a>
     </h1>
 </div>
 
@@ -1172,8 +1172,15 @@
       var s = document.getElementsByTagName("script")[0]; 
       s.parentNode.insertBefore(hm, s);
     })();
-</script></header><h1 id="&#x6E05;&#x7A7A;&#x5185;&#x5BB9;">&#x6E05;&#x7A7A;&#x5185;&#x5BB9;</h1>
-<p>&#x53EF;&#x4F7F;&#x7528; <code>editor.txt.clear()</code> &#x6E05;&#x7A7A;&#x7F16;&#x8F91;&#x5668;&#x5185;&#x5BB9;&#x3002;</p>
+</script></header><h1 id="max-length">max-length</h1>
+<p><strong>wangEditor &#x6682;&#x65F6;&#x65E0;&#x6CD5;&#x5B9E;&#x73B0; <code>max-length</code> &#x529F;&#x80FD;&#x3002;</strong></p>
+<p>&#x76EE;&#x524D;&#x4E1A;&#x754C;&#x6CA1;&#x6709;&#x4E00;&#x4E2A;&#x5BCC;&#x6587;&#x672C; <code>max-length</code> &#x7684;&#x7EDF;&#x4E00;&#x505A;&#x6CD5;&#xFF0C;&#x4ECE;&#x4EA7;&#x54C1;&#x5230;&#x6280;&#x672F;&#x5C42;&#x9762;&#x90FD;&#x6CA1;&#x6709;&#x3002;</p>
+<p><code>max-length</code> &#x4E00;&#x822C;&#x7528;&#x4E8E;&#x9650;&#x5236;&#x7EAF;&#x6587;&#x672C;&#xFF0C;&#x7528;&#x4E8E; <code>&lt;input&gt;</code> <code>&lt;textarea&gt;</code> &#x3002;
+&#x800C;&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#x4E0D;&#x53EA;&#x80FD;&#x8F93;&#x5165;&#x7EAF;&#x6587;&#x672C;&#xFF0C;&#x8FD8;&#x6709;&#x5176;&#x4ED6;&#x5F88;&#x591A;&#x590D;&#x6742;&#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x4F8B;&#x5982;&#x56FE;&#x7247;&#x3001;&#x4EE3;&#x7801;&#x5757;&#x3001;&#x8868;&#x683C;&#x3002;
+&#x8FD9;&#x4E9B;&#x975E;&#x6587;&#x672C;&#x5185;&#x5BB9;&#xFF0C;&#x5728; <code>editor.txt.html()</code> &#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x4E2D;&#x8981;&#x5360;&#x636E;&#x5927;&#x91CF;&#x7684;&#x7A7A;&#x95F4;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x975E;&#x5F97;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x5BCC;&#x6587;&#x672C;&#x7684; <code>max-length</code> &#xFF0C;&#x90A3;&#x76EE;&#x524D;&#x53EA;&#x80FD;&#x662F;&#x901A;&#x8FC7; <code>onchange</code> &#x968F;&#x65F6;&#x68C0;&#x67E5; <code>editor.txt.text()</code> &#xFF0C;&#x7136;&#x540E;&#x5224;&#x65AD;&#x957F;&#x5EA6;&#xFF0C;&#x518D;&#x5BF9;&#x5BCC;&#x6587;&#x672C;&#x505A;&#x7981;&#x7528;&#x5904;&#x7406;&#x3002;
+&#x4E0D;&#x8FC7;&#xFF0C;&#x8FD9;&#x5176;&#x4E2D;&#x53EF;&#x80FD;&#x4F1A;&#x53D1;&#x751F;&#x4E00;&#x4E9B;&#x9884;&#x671F;&#x4E4B;&#x5916;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5230;&#x65F6;&#x53EA;&#x80FD;&#x968F;&#x673A;&#x5E94;&#x53D8;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x6709;&#x66F4;&#x597D;&#x7684;&#x5EFA;&#x8BAE;&#xFF0C;&#x53EF;&#x4EE5;&#x968F;&#x65F6;&#x7ED9;&#x6211;&#x4EEC;&#x63D0;&#x4EA4; <a href="https://github.com/wangeditor-team/wangEditor/issues" target="_blank">issue</a> &#x3002;</p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; wangEditor (2020 - present) all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">File Modify: 
 2020-10-21 02:00:49
 </span></footer><footer></footer>
@@ -1203,12 +1210,12 @@
 
             
                 
-                <a href="05-获取JSON.html" class="navigation navigation-prev " aria-label="Previous page: 获取 JSON">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 13-常见问题">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../03-配置菜单/" class="navigation navigation-next " aria-label="Next page: 03-配置菜单">
+                <a href="02-xss攻击.html" class="navigation navigation-next " aria-label="Next page: XSS 攻击">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1219,7 +1226,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"清空内容","level":"2.2.6","depth":2,"next":{"title":"03-配置菜单","level":"2.3","depth":1,"path":"pages/03-配置菜单/README.md","ref":"pages/03-配置菜单/README.md","articles":[{"title":"自定义菜单","level":"2.3.1","depth":2,"path":"pages/03-配置菜单/01-自定义菜单.md","ref":"pages/03-配置菜单/01-自定义菜单.md","articles":[]},{"title":"配置颜色","level":"2.3.2","depth":2,"path":"pages/03-配置菜单/02-配置颜色.md","ref":"pages/03-配置菜单/02-配置颜色.md","articles":[]},{"title":"配置字体","level":"2.3.3","depth":2,"path":"pages/03-配置菜单/03-配置字体.md","ref":"pages/03-配置菜单/03-配置字体.md","articles":[]},{"title":"配置字号","level":"2.3.4","depth":2,"path":"pages/03-配置菜单/04-配置字号.md","ref":"pages/03-配置菜单/04-配置字号.md","articles":[]},{"title":"配置行高","level":"2.3.5","depth":2,"path":"pages/03-配置菜单/05-配置行高.md","ref":"pages/03-配置菜单/05-配置行高.md","articles":[]},{"title":"配置表情图标","level":"2.3.6","depth":2,"path":"pages/03-配置菜单/06-配置表情图标.md","ref":"pages/03-配置菜单/06-配置表情图标.md","articles":[]},{"title":"代码高亮","level":"2.3.7","depth":2,"path":"pages/03-配置菜单/07-代码高亮.md","ref":"pages/03-配置菜单/07-代码高亮.md","articles":[]},{"title":"配置全屏功能","level":"2.3.8","depth":2,"path":"pages/03-配置菜单/08-配置全屏功能.md","ref":"pages/03-配置菜单/08-配置全屏功能.md","articles":[]}]},"previous":{"title":"获取 JSON","level":"2.2.5","depth":2,"path":"pages/02-内容处理/05-获取JSON.md","ref":"pages/02-内容处理/05-获取JSON.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","donate","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy wangEditor (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/wangeditor-team/wangeditor"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"donate":{"title":"","button":"捐赠","wechat":"https://what-is-fe.gitee.io/images/wechat-pay.jpeg","alipay":"https://what-is-fe.gitee.io/images/ali-pay.jpeg","wechatText":"","alipayText":""},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"wangfupeng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"wangEditor 用户文档","language":"zh-hans","gitbook":"*","description":"wangEditor 用户文档"},"file":{"path":"pages/02-内容处理/06-清空内容.md","mtime":"2020-10-21T02:00:49.076Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-21T02:01:38.982Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"max-length","level":"2.13.1","depth":2,"next":{"title":"XSS 攻击","level":"2.13.2","depth":2,"path":"pages/13-常见问题/02-xss攻击.md","ref":"pages/13-常见问题/02-xss攻击.md","articles":[]},"previous":{"title":"13-常见问题","level":"2.13","depth":1,"path":"pages/13-常见问题/README.md","ref":"pages/13-常见问题/README.md","articles":[{"title":"max-length","level":"2.13.1","depth":2,"path":"pages/13-常见问题/01-maxlength.md","ref":"pages/13-常见问题/01-maxlength.md","articles":[]},{"title":"XSS 攻击","level":"2.13.2","depth":2,"path":"pages/13-常见问题/02-xss攻击.md","ref":"pages/13-常见问题/02-xss攻击.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","donate","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy wangEditor (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/wangeditor-team/wangeditor"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"donate":{"title":"","button":"捐赠","wechat":"https://what-is-fe.gitee.io/images/wechat-pay.jpeg","alipay":"https://what-is-fe.gitee.io/images/ali-pay.jpeg","wechatText":"","alipayText":""},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"wangfupeng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"wangEditor 用户文档","language":"zh-hans","gitbook":"*","description":"wangEditor 用户文档"},"file":{"path":"pages/13-常见问题/01-maxlength.md","mtime":"2020-10-21T02:00:49.076Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-21T02:01:38.982Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
