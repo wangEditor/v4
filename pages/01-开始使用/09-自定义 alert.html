@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>使用V3版本 · wangEditor 用户文档</title>
+        <title>自定义 alert · wangEditor 用户文档</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -81,10 +81,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../02-内容处理/" />
+    <link rel="next" href="99-使用V3版本.html" />
     
     
-    <link rel="prev" href="09-自定义 alert.html" />
+    <link rel="prev" href="08-自动focus.html" />
     
 
     </head>
@@ -253,7 +253,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.1.9" data-path="09-自定义 alert.html">
+        <li class="chapter active" data-level="2.1.9" data-path="09-自定义 alert.html">
             
                 <a href="09-自定义 alert.html">
             
@@ -266,7 +266,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.1.10" data-path="99-使用V3版本.html">
+        <li class="chapter " data-level="2.1.10" data-path="99-使用V3版本.html">
             
                 <a href="99-使用V3版本.html">
             
@@ -1187,7 +1187,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >使用V3版本</a>
+        <a href="../.." >自定义 alert</a>
     </h1>
 </div>
 
@@ -1211,22 +1211,36 @@
       var s = document.getElementsByTagName("script")[0]; 
       s.parentNode.insertBefore(hm, s);
     })();
-</script></header><h1 id="&#x4F7F;&#x7528;v3&#x7248;&#x672C;">&#x4F7F;&#x7528;V3&#x7248;&#x672C;</h1>
-<p>&#x5C3D;&#x91CF;&#x5347;&#x7EA7;&#x4F7F;&#x7528; <code>V4</code> &#x7248;&#x672C;&#x3002;<strong>&#x5E73;&#x6ED1;&#x5347;&#x7EA7;&#xFF0C;&#x6210;&#x672C;&#x5F88;&#x4F4E;</strong>&#x3002;</p>
-<ul>
-<li><code>V3</code> &#x7248;&#x672C;&#x4EE5;&#x540E;&#x5C06;&#x4E0D;&#x518D;&#x7EF4;&#x62A4;&#xFF0C;</li>
-<li><code>V4</code> &#x548C; <code>V3</code> &#x7684;&#x914D;&#x7F6E;&#x548C;&#x4F7F;&#x7528;&#x6781;&#x4E3A;&#x76F8;&#x4F3C;&#xFF08;&#x628A; <code>editor.customConfig</code> &#x6539;&#x4E3A; <code>editor.config</code> &#x5373;&#x53EF;&#xFF09;</li>
-</ul>
-<p>&#x5982;&#x786E;&#x5B9E;&#x6CA1;&#x6CD5;&#x5347;&#x7EA7;&#xFF0C;&#x4E0D;&#x5F97;&#x5DF2;&#x7EE7;&#x7EED;&#x4F7F;&#x7528; <code>V3</code>&#xFF0C;&#x53EF;&#x53C2;&#x8003;</p>
-<ul>
-<li>&#x4E0B;&#x8F7D;&#x548C;&#x5B89;&#x88C5;<ul>
-<li>CDN <a href="https://unpkg.com/wangeditor@3.1.1/release/wangEditor.min.js" target="_blank">https://unpkg.com/wangeditor@3.1.1/release/wangEditor.min.js</a></li>
-<li>&#x6587;&#x4EF6; <a href="https://github.com/wangfupeng1988/wangEditor/releases/tag/v3.1.1" target="_blank">https://github.com/wangfupeng1988/wangEditor/releases/tag/v3.1.1</a></li>
-<li>npm <code>npm i wangeditor@3.1.1</code></li>
-</ul>
-</li>
-<li>&#x6587;&#x6863; <a href="https://www.kancloud.cn/wangfupeng/wangeditor3/332599" target="_blank">https://www.kancloud.cn/wangfupeng/wangeditor3/332599</a></li>
-</ul>
+</script></header><h1 id="&#x81EA;&#x5B9A;&#x4E49;-alert">&#x81EA;&#x5B9A;&#x4E49; alert</h1>
+<p>&#x7F16;&#x8F91;&#x5668; customAlert &#x662F;&#x5BF9;&#x5168;&#x5C40;&#x7684;alert&#x505A;&#x4E86;&#x7EDF;&#x4E00;&#x5904;&#x7406;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; window.alert&#x3002;</p>
+<p>&#x5982;&#x89C9;&#x5F97;&#x6D4F;&#x89C8;&#x5668;&#x81EA;&#x5E26;&#x7684;alert&#x4F53;&#x9A8C;&#x4E0D;&#x4F73;&#xFF0C;&#x53EF;&#x81EA;&#x5B9A;&#x4E49; alert&#xFF0C;&#x4EE5;&#x4FBF;&#x4E8E;&#x8FBE;&#x5230;&#x4E0E;&#x81EA;&#x8EAB;&#x9879;&#x76EE;&#x7EDF;&#x4E00;&#x7684;alert&#x6548;&#x679C;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { message } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;antd&apos;</span>;
+...
+
+const editor = <span class="hljs-keyword">new</span> E(<span class="hljs-string">&apos;#div1&apos;</span>)
+<span class="hljs-comment">// &#x4EE5; Ant Design &#x4E3A;&#x4F8B;</span>
+editor.config.customAlert = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">s, t</span>) </span>{
+  <span class="hljs-keyword">switch</span> (t) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;success&apos;</span>:
+      message.success(s)
+      <span class="hljs-keyword">break</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;info&apos;</span>:
+      message.info(s)
+      <span class="hljs-keyword">break</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;warning&apos;</span>:
+      message.warning(s)
+      <span class="hljs-keyword">break</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;error&apos;</span>:
+      message.error(s)
+      <span class="hljs-keyword">break</span>
+    <span class="hljs-keyword">default</span>:
+      message.info(s)
+      <span class="hljs-keyword">break</span>
+  }
+}
+
+editor.create()
+</code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; wangEditor (2020 - present) all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">File Modify: 
 2020-11-27 05:57:59
 </span></footer><footer></footer>
@@ -1256,12 +1270,12 @@
 
             
                 
-                <a href="09-自定义 alert.html" class="navigation navigation-prev " aria-label="Previous page: 自定义 alert">
+                <a href="08-自动focus.html" class="navigation navigation-prev " aria-label="Previous page: 自动 focus">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../02-内容处理/" class="navigation navigation-next " aria-label="Next page: 02-内容处理">
+                <a href="99-使用V3版本.html" class="navigation navigation-next " aria-label="Next page: 使用V3版本">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1272,7 +1286,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"使用V3版本","level":"2.1.10","depth":2,"next":{"title":"02-内容处理","level":"2.2","depth":1,"path":"pages/02-内容处理/README.md","ref":"pages/02-内容处理/README.md","articles":[{"title":"设置内容","level":"2.2.1","depth":2,"path":"pages/02-内容处理/01-设置内容.md","ref":"pages/02-内容处理/01-设置内容.md","articles":[]},{"title":"追加新内容","level":"2.2.2","depth":2,"path":"pages/02-内容处理/02-追加新内容.md","ref":"pages/02-内容处理/02-追加新内容.md","articles":[]},{"title":"获取 html","level":"2.2.3","depth":2,"path":"pages/02-内容处理/03-获取html.md","ref":"pages/02-内容处理/03-获取html.md","articles":[]},{"title":"获取 text","level":"2.2.4","depth":2,"path":"pages/02-内容处理/04-获取text.md","ref":"pages/02-内容处理/04-获取text.md","articles":[]},{"title":"获取/设置 JSON","level":"2.2.5","depth":2,"path":"pages/02-内容处理/05-获取和设置JSON.md","ref":"pages/02-内容处理/05-获取和设置JSON.md","articles":[]},{"title":"清空内容","level":"2.2.6","depth":2,"path":"pages/02-内容处理/06-清空内容.md","ref":"pages/02-内容处理/06-清空内容.md","articles":[]},{"title":"配置历史记录","level":"2.2.7","depth":2,"path":"pages/02-内容处理/07-配置历史记录.md","ref":"pages/02-内容处理/07-配置历史记录.md","articles":[]}]},"previous":{"title":"自定义 alert","level":"2.1.9","depth":2,"path":"pages/01-开始使用/09-自定义 alert.md","ref":"pages/01-开始使用/09-自定义 alert.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","donate","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy wangEditor (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/wangeditor-team/wangeditor"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"donate":{"title":"","button":"捐赠","wechat":"https://what-is-fe.gitee.io/images/wechat-pay.jpeg","alipay":"https://what-is-fe.gitee.io/images/ali-pay.jpeg","wechatText":"","alipayText":""},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"wangfupeng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"wangEditor 用户文档","language":"zh-hans","gitbook":"*","description":"wangEditor 用户文档"},"file":{"path":"pages/01-开始使用/99-使用V3版本.md","mtime":"2020-11-27T05:57:59.168Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-27T05:58:47.473Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"自定义 alert","level":"2.1.9","depth":2,"next":{"title":"使用V3版本","level":"2.1.10","depth":2,"path":"pages/01-开始使用/99-使用V3版本.md","ref":"pages/01-开始使用/99-使用V3版本.md","articles":[]},"previous":{"title":"自动 focus","level":"2.1.8","depth":2,"path":"pages/01-开始使用/08-自动focus.md","ref":"pages/01-开始使用/08-自动focus.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","donate","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy wangEditor (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/wangeditor-team/wangeditor"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"donate":{"title":"","button":"捐赠","wechat":"https://what-is-fe.gitee.io/images/wechat-pay.jpeg","alipay":"https://what-is-fe.gitee.io/images/ali-pay.jpeg","wechatText":"","alipayText":""},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"wangfupeng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"wangEditor 用户文档","language":"zh-hans","gitbook":"*","description":"wangEditor 用户文档"},"file":{"path":"pages/01-开始使用/09-自定义 alert.md","mtime":"2020-11-27T05:57:59.168Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-27T05:58:47.473Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
